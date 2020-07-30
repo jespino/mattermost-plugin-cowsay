@@ -1,0 +1,16 @@
+{
+    "template": "git@github.com:jespino/cookiecutter-mattermost-plugin.git",
+    "commit": "3f02379a4641a36da92e520b0437afede21e5829",
+    "context": {
+        "cookiecutter": {
+            "project_dir": "mattermost-plugin-cowsay",
+            "id": "com.github.jespino.cowsay",
+            "name": "Cowsay",
+            "description": "Port of the classic cowsay command as a Mattermost slash command",
+            "frontend_language": "javascript",
+            "webapp": "false",
+            "server": "true",
+            "_template": "git@github.com:jespino/cookiecutter-mattermost-plugin.git"
+        }
+    }
+}
