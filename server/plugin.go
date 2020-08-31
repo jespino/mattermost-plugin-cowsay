@@ -1,7 +1,6 @@
 package main
 
 import (
-	"net/http"
 	"sync"
 
 	"github.com/mattermost/mattermost-server/v5/plugin"
@@ -19,15 +18,10 @@ type Plugin struct {
 	configuration *configuration
 }
 
-// ServeHTTP demonstrates a plugin that handles HTTP requests by greeting the world.
-func (p *Plugin) ServeHTTP(c *plugin.Context, w http.ResponseWriter, r *http.Request) {
-}
-
+// OnActivate initialize the cowsay command
 func (p *Plugin) OnActivate() error {
 	if err := p.API.RegisterCommand(createCowsayCommand()); err != nil {
 		return err
 	}
 	return nil
 }
-
-// See https://developers.mattermost.com/extend/plugins/server/reference/
