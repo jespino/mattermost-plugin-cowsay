@@ -35,6 +35,9 @@ func (p *Plugin) ExecuteCommand(c *plugin.Context, args *model.CommandArgs) (*mo
 	}
 
 	for _, character := range cowsay.Cows() {
+		if character == "sodomized" || character == "head-in" {
+			continue
+		}
 		if action == character {
 			message, err := cowsay.Say(
 				cowsay.Phrase(strings.TrimPrefix(args.Command, command+" "+action)),
@@ -60,6 +63,9 @@ func getAutocompleteData() *model.AutocompleteData {
 	cowsayCmd := model.NewAutocompleteData("cowsay", "[character] [extra-text]", "Draw an ascii character saying something")
 
 	for _, character := range cowsay.Cows() {
+		if character == "sodomized" || character == "head-in" {
+			continue
+		}
 		autocomp := model.NewAutocompleteData(character, "[extra-text]", fmt.Sprintf("Draw a %s saying somethign", character))
 		cowsayCmd.AddCommand(autocomp)
 	}
